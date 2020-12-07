@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Reviews</title>
+    <link rel="stylesheet" href="./fontawesome/css/all.min.css" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -21,18 +22,25 @@
           </div>
           <h4 id="author">Ash Kethcum</h4>
           <p id="job">Pokemon Master</p>
-          <p class="info">
+          <p id="info">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet,
             rerum quae. Quibusdam quas sunt adipisci temporibus maxime harum?
             Quae, veritatis?
           </p>
           <!-- prev next buttons -->
           <div class="button-container">
-            <button class="prev-btn"></button>
+            <button class="prev-btn">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="next-btn">
+              <i class="fas fa-chevron-right"></i>
+            </button>
           </div>
+          <!-- Random Buttom -->
+          <button class="random-btn">surprise me</button>
         </article>
       </section>
     </main>
-    <script src="app.js"></script>
+    <script src="./app.js"></script>
   </body>
 </html>
