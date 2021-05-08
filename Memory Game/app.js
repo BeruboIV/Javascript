@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
     for (let i = 0; i < cardArray.length; i++) {
       var card = document.createElement("img");
       // card.src = "images/blank.png";
-      // card.id = 1; // Difficult to use this.getAttribute()
+      // card.id = 1; // Difficult to use, use this.getAttribute()
       //So we use the function below
       card.setAttribute("src", "images/blank.png");
       //0-based indexing for easier retrieval
