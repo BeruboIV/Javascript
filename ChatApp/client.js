@@ -3,24 +3,37 @@ document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("form");
     const message = document.getElementById("text");
     const message_container = document.getElementById("message-container");
+    const name = prompt("Enter your name: ");
 
-    socket.on("connect", () => {
-        console.log(socket.id);
+    // New user joins
+    addMessage("You joined");
+    socket.emit("new-user", name);
+    socket.on("user-joined", (name) => {
+        addMessage(name + " joined");
     });
 
+    //Hitting the send button
     form.addEventListener("submit", (evt) => {
         evt.preventDefault();
         if (message.value) {
-            socket.emit("chat-message", message.value);
+            addMessage("You : " + message.value);
+            socket.emit("chat-message", {
+                message: message.value,
+                name: name,
+            });
             message.value = "";
         }
     });
 
-    socket.on("chat-message", (msg) => {
+    socket.on("send-message", (info) => {
+        addMessage(info.name + " " + info.message);
+        console.log(info);
+    });
+
+    function addMessage(msg) {
         const item = document.createElement("div");
+        item.style.paddingTop = "10px";
         item.innerText = msg;
         message_container.appendChild(item);
-        // window.scrollTo(0, document.body.scrollHeight);
-        // alert("Message!");
-    });
+    }
 });
