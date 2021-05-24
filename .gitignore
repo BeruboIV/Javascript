@@ -2,3 +2,7 @@
 node_modules/*
 BooksDirectory/node_modules/*
 Portfolio/node_modules/*
+ChatApp/node_modules/*
+ChatRoom/node_modules/*
+NodeMailer/node_modules/*
+Practice/*
