@@ -3,12 +3,14 @@ const app = express();
 const http = require("http").Server(app);
 const path = require("path");
 const io = require("socket.io")(http);
+const morgan = require("morgan");
 const PORT = process.env.PORT || 5000;
 
 const users = {};
 
 // Middlewares
 app.use(express.static(path.join(__dirname)));
+app.use(morgan("dev"));
 
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "index.html"));
