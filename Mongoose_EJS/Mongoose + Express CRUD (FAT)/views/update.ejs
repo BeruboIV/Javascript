@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>19BCT0204</title>
+    </head>
+    <body>
+        <form action="/update/<%= product._id %>?_method=PUT" method="POST">
+            <label for="electricity">ELECTRICITY</label>
+            <input
+                type="text"
+                name="electricity"
+                id="electricity"
+                value="<%= product.electricity %>"
+            />
+            <br />
+            <br />
+            <label for="natural_gas">NATURAL GAS</label>
+            <input
+                type="text"
+                name="natural_gas"
+                id="natural_gas"
+                value="<%= product.natural_gas %>"
+            />
+            <br />
+            <br />
+            <label for="oil">OIL</label>
+            <input type="text" name="oil" id="oil" value="<%= product.oil %>" />
+            <br />
+            <br />
+            <label for="lpg">LPG</label>
+            <input type="text" name="lpg" id="lpg" value="<%= product.lpg %>" />
+            <br />
+            <br />
+            <button>SUBMIT</button>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>19BCT0204</title>
+        <style>
+            table,
+            th,
+            td {
+                border: solid;
+                border-collapse: collapse;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Pramit Gupta</h1>
+        <h1>19BCT0204</h1>
+        <table>
+            <tr>
+                <th>Energy Use</th>
+                <th>Electricity</th>
+                <th>Natural Gas</th>
+                <th>Oil</th>
+                <th>LPG</th>
+                <th>Total</th>
+                <th></th>
+            </tr>
+
+            <% for(let product of products) { %>
+            <tr>
+                <td><%= product.energy_use %></td>
+                <td><%= product.electricity %></td>
+                <td><%= product.natural_gas %></td>
+                <td><%= product.oil %></td>
+                <td><%= product.lpg %></td>
+                <td>
+                    <%= parseFloat(product.electricity ? product.electricity :
+                    0) + parseFloat(product.natural_gas ? product.natural_gas :
+                    0) + parseFloat(product.oil ? product.oil : 0) +
+                    parseFloat(product.lpg ? product.lpg : 0) %>
+                </td>
+                <td><a href="/update/<%= product._id %>">UPDATE</a></td>
+            </tr>
+            <% } %>
+            <tr>
+                <td>Total</td>
+                <% var tot = 0 %> <% for(let product of products) { %> <% tot +=
+                parseFloat(product.electricity ? product.electricity : 0) %> <%
+                } %>
+                <td><%= tot %></td>
+                <% tot = 0 %> <% for(let product of products) { %> <% tot +=
+                parseFloat(product.natural_gas ? product.natural_gas : 0) %> <%
+                } %>
+                <td><%= tot %></td>
+                <% tot = 0 %> <% for(let product of products) { %> <% tot +=
+                parseFloat(product.oil ? product.oil : 0) %> <% } %>
+                <td><%= tot %></td>
+                <% tot = 0 %> <% for(let product of products) { %> <% tot +=
+                parseFloat(product.lpg ? product.lpg : 0) %> <% } %>
+                <td><%= tot %></td>
+                <% tot = 0 %> <% for(let product of products) { %> <% tot +=
+                parseFloat(product.electricity ? product.electricity : 0) +
+                parseFloat(product.natural_gas ? product.natural_gas : 0) +
+                parseFloat(product.oil ? product.oil : 0) +
+                parseFloat(product.lpg ? product.lpg : 0) %> <% } %>
+                <td><%= tot %></td>
+            </tr>
+        </table>
+    </body>
+</html>
