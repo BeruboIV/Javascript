@@ -1,0 +1,2 @@
+[{"city" : "Seatlle", "forecast" : [70, 68, 72, 79, 10]}, {"city" : "San Diego", "forecast" : [30, 58, 90]}, {"city" : "Boston", "forecast" : [50, 78, 28, 74]},{"city" : "New York City", "forecast" : [12, 70, 68]},
+{"city" : "New Orleans", "forecast" : [68]}, {"city" : "Oakland", "forecast" : [92, 120, 68, 42, 79]}]
